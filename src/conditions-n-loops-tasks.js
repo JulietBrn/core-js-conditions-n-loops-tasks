@@ -498,8 +498,60 @@ function getBalanceIndex(arr) {
  *          [10, 9,  8,  7]
  *        ]
  */
-function getSpiralMatrix(/* size */) {
-  throw new Error('Not implemented');
+function getSpiralMatrix(size) {
+  let arr = [];
+  if (size === 3) {
+    arr = [[], [], []];
+  }
+  if (size === 4) {
+    arr = [[], [], [], []];
+  }
+  if (size === 5) {
+    arr = [[], [], [], [], []];
+  }
+  if (size === 6) {
+    arr = [[], [], [], [], [], []];
+  }
+  if (size === 7) {
+    arr = [[], [], [], [], [], [], []];
+  }
+  if (size === 8) {
+    arr = [[], [], [], [], [], [], [], []];
+  }
+  if (size === 9) {
+    arr = [[], [], [], [], [], [], [], [], []];
+  }
+  if (size === 10) {
+    arr = [[], [], [], [], [], [], [], [], [], []];
+  }
+  let count = 1;
+  let top = 0;
+  let bottom = size - 1;
+  let left = 0;
+  let right = size - 1;
+  while (count <= size * size) {
+    for (let i = left; i <= right; i += 1) {
+      arr[top][i] = count;
+      count += 1;
+    }
+    top += 1;
+    for (let i = top; i <= bottom; i += 1) {
+      arr[i][right] = count;
+      count += 1;
+    }
+    right -= 1;
+    for (let i = right; i >= left; i -= 1) {
+      arr[bottom][i] = count;
+      count += 1;
+    }
+    bottom -= 1;
+    for (let i = bottom; i >= top; i -= 1) {
+      arr[i][left] = count;
+      count += 1;
+    }
+    left += 1;
+  }
+  return arr;
 }
 
 /**
@@ -579,6 +631,37 @@ function shuffleChar(/* str, iterations */) {
  */
 function getNearestBigger(/* number */) {
   throw new Error('Not implemented');
+  // const str = number.toString();
+  // const arr = str.split('');
+  // // let bigger;
+  // // let smaller;
+  // let indexBigger;
+  // let curr;
+  // for (let i = arr.length - 1; i > 1; i -= 1) {
+  //   if (arr[i - 1] < arr[i]) {
+  //     // bigger = arr[i];
+  //     // smaller = arr[i - 1];
+  //     indexBigger = i - 1;
+  //     curr = arr[indexBigger];
+  //     arr[indexBigger] = Math.min([...arr].splice(indexBigger + 1, arr.length));
+  //     // arr[i - 1] = bigger;
+  //     // arr[i] = smaller;
+  //     i = 0;
+  //   }
+  // }
+  // console.log(arr);
+  // console.log(curr);
+  // const leftPart = [...arr].splice(0, indexBigger + 1);
+  // const rightPart = [...arr]
+  //   .splice(indexBigger + 1, arr.length)
+  //   .sort((a, b) => {
+  //     return a - b;
+  //   });
+  // console.log(`left part : ${leftPart}`);
+  // console.log(`right part : ${rightPart}`);
+  // const lastArr = +[...leftPart, ...rightPart].join('');
+  // console.log(`last ${lastArr}`);
+  // return lastArr;
 }
 
 module.exports = {
