@@ -626,22 +626,26 @@ function sortByAsc(arr) {
  *  '012345', 3 => '024135' => '043215' => '031425'
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
-function shuffleChar(/* str, iterations */) {
-  throw new Error('Not implemented');
-  // let odds = '';
-  // let res = '';
-  // for (let it = 0; it <= iterations; it += 1) {
-  //   for (let i = 1; i < str.length; i += 1) {
-  //     if (i % 2 !== 0) {
-  //       odds += str[i];
-  //       str.slice(i, i + 1);
-  //     }
-  //   }
-  //   res = str + odds;
-  //   odds = '';
-  // }
-  // console.log(str, iterations, res);
-  // return res;
+function shuffleChar(str, iterations) {
+  let odds = '';
+  let evens = '';
+  let res = '';
+  let string = str;
+  for (let it = 1; it <= iterations; it += 1) {
+    for (let i = 0; i < str.length; i += 1) {
+      if (i % 2 !== 0) {
+        odds += string[i];
+      } else {
+        evens += string[i];
+      }
+    }
+    res = evens + odds;
+    odds = '';
+    evens = '';
+    string = res;
+  }
+  console.log(str, iterations, res);
+  return res;
 }
 
 /**
