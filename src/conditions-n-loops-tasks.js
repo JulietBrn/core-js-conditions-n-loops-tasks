@@ -644,7 +644,6 @@ function shuffleChar(str, iterations) {
     evens = '';
     string = res;
   }
-  console.log(str, iterations, res);
   return res;
 }
 
