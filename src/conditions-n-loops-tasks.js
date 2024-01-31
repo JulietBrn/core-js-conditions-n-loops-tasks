@@ -571,6 +571,16 @@ function getSpiralMatrix(size) {
  */
 function rotateMatrix(/* matrix */) {
   throw new Error('Not implemented');
+  // const copyOfMatrix = matrix;
+  // const maxLength = matrix.length - 1;
+  // for (let i = 0; i <= maxLength; i += 1) {
+  //   for (let j = 0; j <= maxLength; j += 1) {
+  //     copyOfMatrix[j][maxLength - i] = copyOfMatrix[i][j];
+  //   }
+  // }
+  // console.log(matrix);
+  // console.log(copyOfMatrix);
+  // return copyOfMatrix;
 }
 
 /**
@@ -587,8 +597,16 @@ function rotateMatrix(/* matrix */) {
  *  [2, 9, 5, 9]    => [2, 5, 9, 9]
  *  [-2, 9, 5, -3]  => [-3, -2, 5, 9]
  */
-function sortByAsc(/* arr */) {
-  throw new Error('Not implemented');
+function sortByAsc(arr) {
+  const copyArr = arr;
+  for (let i = 0; i < copyArr.length; i += 1) {
+    for (let j = 0; j < copyArr.length - i; j += 1) {
+      if (copyArr[j] > copyArr[j + 1]) {
+        [copyArr[j], copyArr[j + 1]] = [copyArr[j + 1], copyArr[j]];
+      }
+    }
+  }
+  return copyArr;
 }
 
 /**
@@ -610,6 +628,20 @@ function sortByAsc(/* arr */) {
  */
 function shuffleChar(/* str, iterations */) {
   throw new Error('Not implemented');
+  // let odds = '';
+  // let res = '';
+  // for (let it = 0; it <= iterations; it += 1) {
+  //   for (let i = 1; i < str.length; i += 1) {
+  //     if (i % 2 !== 0) {
+  //       odds += str[i];
+  //       str.slice(i, i + 1);
+  //     }
+  //   }
+  //   res = str + odds;
+  //   odds = '';
+  // }
+  // console.log(str, iterations, res);
+  // return res;
 }
 
 /**
